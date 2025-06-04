@@ -10,3 +10,7 @@ class TestFindByType(unittest.TestCase):
         data: int = 39
         data2: int = 39
         self.assertEqual(data, data2)
+
+
+if __name__ == '__main__':
+    unittest.main()
