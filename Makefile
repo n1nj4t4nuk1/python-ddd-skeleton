@@ -1,7 +1,6 @@
 # Build project
 .PHONY = build
 build:
-	python3 -m venv env
 	pip3 install -r requirements.txt
 
 # Install dependencies
@@ -12,7 +11,7 @@ deps:
 # Run tests
 .PHONY = test
 test:
-	python -m unittest discover -s ./tests -p '*_test.py'
+	python3 -m unittest discover -s ./tests -p '*_test.py'
 
 # Run full app
 .PHONY = run
