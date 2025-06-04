@@ -2,7 +2,7 @@ import unittest
 
 
 class TestFindByType(unittest.TestCase):
-    def sample_test(self):
+    def test_sample(self):
         """
         Sample test
         """
