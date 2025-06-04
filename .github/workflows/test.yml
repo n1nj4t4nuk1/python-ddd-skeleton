@@ -9,12 +9,13 @@ jobs:
         runs-on: ubuntu-latest
         strategy:
           matrix:
-            python-version: [ '3.9', '3.10', '3.11', '3.12' ]
+            python-version: [ '3.9', '3.10', '3.11', '3.12', '3.13' ]
+            os: ['ubuntu-latest']
         steps:
             - name: Clone and checkout branch
               uses: actions/checkout@v2
 
-            - name: Set up Python ${{ matrix.python-version }}
+            - name: Set up Python ${{ matrix.python-version }} in ${{ matrix.os }} OS.
               uses: actions/setup-python@v2
               with:
                 python-version: ${{ matrix.python-version }}
