@@ -1,0 +1,28 @@
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: '36 6 * * *'
+name: Tests
+jobs:
+    tests:
+        if: ${{ vars.CICD_DOMAIN == 'github.com' }}
+        runs-on: ubuntu-latest
+        strategy:
+          matrix:
+            python-version: [ '3.9', '3.10', '3.11', '3.12', '3.13' ]
+            os: ['ubuntu-latest']
+        steps:
+            - name: Clone and checkout branch
+              uses: actions/checkout@v2
+
+            - name: Set up Python ${{ matrix.python-version }} in ${{ matrix.os }} OS.
+              uses: actions/setup-python@v2
+              with:
+                python-version: ${{ matrix.python-version }}
+
+            - name: Build project
+              run: make
+
+            - name: Run tests
+              run: make test
