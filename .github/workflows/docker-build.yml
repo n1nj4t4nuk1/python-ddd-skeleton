@@ -8,6 +8,7 @@ on:
 
 jobs:
     tests:
+        if: ${{ vars.CICD_DOMAIN == 'github.com' }}
         runs-on: ubuntu-latest
         strategy:
           matrix:
@@ -28,6 +29,7 @@ jobs:
               run: make test
 
     build:
+        if: ${{ vars.CICD_DOMAIN == 'github.com' }}
         name: Build
         needs: tests
 
