@@ -8,7 +8,7 @@ on:
 
 jobs:
     tests:
-        if: ${{ vars.CICD_DOMAIN == 'github.com' }}
+        if: ${{ vars.DOMAIN == 'github.com' }}
         runs-on: ubuntu-latest
         strategy:
           matrix:
