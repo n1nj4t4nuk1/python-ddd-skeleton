@@ -23,7 +23,7 @@ on:
 jobs:
   analyze:
     name: Analyze
-    if: ${{ vars.CICD_DOMAIN == 'github.com' }}
+    if: ${{ vars.GITHUB_ACTIONS == 'true' }}
     runs-on: ubuntu-latest
     permissions:
       actions: read
