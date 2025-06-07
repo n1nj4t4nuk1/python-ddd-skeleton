@@ -7,7 +7,7 @@ name: Tests
 jobs:
     tests:
         if: ${{ vars.DOMAIN == 'codeberg.org' }}
-        runs-on: act-runner
+        runs-on: codeberg-tiny
         strategy:
           matrix:
             python-version: [ '3.9', '3.10', '3.11', '3.12', '3.13' ]
