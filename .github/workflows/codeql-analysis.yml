@@ -23,7 +23,7 @@ on:
 jobs:
   analyze:
     name: Analyze
-    if: ${{ vars.GITHUB_ACTIONS == 'true' }}
+    if: ${{ github.actions == 'true' }}
     runs-on: ubuntu-latest
     permissions:
       actions: read
