@@ -6,7 +6,7 @@ on:
 name: Tests
 jobs:
     tests:
-        if: ${{ vars.CICD_DOMAIN == 'github.com' }}
+        if: ${{ vars.CICD_DOMAIN == 'codeberg.org' }}
         runs-on: ubuntu-latest
         strategy:
           matrix:
