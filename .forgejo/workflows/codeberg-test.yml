@@ -7,11 +7,10 @@ name: Tests
 jobs:
     tests:
         if: ${{ vars.DOMAIN == 'codeberg.org' }}
-        runs-on: ubuntu-latest
+        runs-on: docker
         strategy:
           matrix:
             python-version: [ '3.9', '3.10', '3.11', '3.12', '3.13' ]
-            os: ['ubuntu-latest']
         steps:
             - name: Clone and checkout branch
               uses: actions/checkout@v2
