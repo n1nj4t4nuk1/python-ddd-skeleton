@@ -23,7 +23,7 @@ on:
 jobs:
   analyze:
     name: Analyze
-    if: ${{ GITHUB_ACTION_PATH == 'github.com' }}
+    if: ${{ $GITHUB_ACTION_PATH == 'github.com' }}
     runs-on: ubuntu-latest
     permissions:
       actions: read
